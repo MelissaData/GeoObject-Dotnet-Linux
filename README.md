@@ -1,8 +1,12 @@
-# Melissa Data GeoCoder Object Linux Net Sample
+# Melissa - GeoCoder Object Linux Dotnet
 
 ## Purpose
 
-This is a sample of the Melissa Data GeoCoder Object using C#
+This code showcases the Melissa GeoCoder Object using C#.
+
+Please feel free to copy or embed this code to your own project. Happy coding!
+
+For the latest Melissa GeoCoder Object release notes, please visit: https://releasenotes.melissa.com/on-premise-api/geocoder-object/
 
 The console will ask the user for:
 - Zip Code
@@ -35,7 +39,7 @@ For Canada:
 
 #### libmdGeo.so
 
-This is the code of the Melissa Data Object.
+This is the code of the Melissa Object.
 
 #### Data File(s)
   - mdGeoCode.db3
@@ -111,19 +115,19 @@ Melissa Updater is a CLI application allowing the user to update their Melissa a
 	- It will handle all of the data download/path and dll(s) for you.
 2. If you already have the latest DQS Release (zip), you can find the data file(s) and dll(s) in there
     - Use the location of where you copied/installed the data and update the "DataPath" variable in the bash script.
-    - Copy .so file(s) mentioned above into the `MelissaDataGeoCoderObjectLinuxNETSample` project folder.
+    - Copy .so file(s) mentioned above into the `MelissaGeoCoderObjectLinuxDotnet` project folder.
 
 ----------------------------------------
 
 #### Configure Target Framework
 
-Depending on your target .NET framework, you may need to configure the bash script. In order to do this, open up the `MelissaDataGeoCoderObjectLinuxNETSample.sh` for editing, proceed to the bottom of the script where you will find this section of code.
+Depending on your target .NET framework, you may need to configure the bash script. In order to do this, open up the `MelissaGeoCoderObjectLinuxDotnet.sh` for editing, proceed to the bottom of the script where you will find this section of code.
 
 Default set for .NET 7.0
 ```
-dotnet publish -f="net7.0" -c Release -o $BuildPath MelissaDataGeoCoderObjectLinuxNETSample/MelissaDataGeoCoderObjectLinuxNETSample.csproj
-#dotnet publish -f="net5.0" -c Release -o $BuildPath MelissaDataGeoCoderObjectLinuxNETSample/MelissaDataGeoCoderObjectLinuxNETSample.csproj
-#dotnet publish -f="netcoreapp3.1" -c Release -o $BuildPath MelissaDataGeoCoderObjectLinuxNETSample/MelissaDataGeoCoderObjectLinuxNETSample.csproj
+dotnet publish -f="net7.0" -c Release -o $BuildPath MelissaGeoCoderObjectLinuxDotnet/MelissaGeoCoderObjectLinuxDotnet.csproj
+#dotnet publish -f="net5.0" -c Release -o $BuildPath MelissaGeoCoderObjectLinuxDotnet/MelissaGeoCoderObjectLinuxDotnet.csproj
+#dotnet publish -f="netcoreapp3.1" -c Release -o $BuildPath MelissaGeoCoderObjectLinuxDotnet/MelissaGeoCoderObjectLinuxDotnet.csproj
 ```
 The target framework is specified with the -f flag found in the command line. If you wish to use any version besides .NET 7.0, please uncomment the line containing that framework and comment out the line containing the .NET 7.0 framework (# to comment).
 
@@ -131,7 +135,7 @@ The target framework is specified with the -f flag found in the command line. If
 
 To be able to run the bash script, you must first make it an executable using the command:
 
-`chmod +x MelissaDataGeoCoderObjectLinuxNETSample.sh`
+`chmod +x MelissaGeoCoderObjectLinuxDotnet.sh`
 
 As an indicator, the filename will change colors once it becomes an executable.
 
@@ -145,7 +149,7 @@ Parameters:
 
   This is convenient when you want to get results for a specific zip code in one run instead of testing multiple zip codes in interactive mode.
 
-- -l or --license (optional): a license string to test the geocoder object
+- -l or --license (optional): a license string to test the GeoCoder object
 - -q or --quiet (optional): add to the command if you do not want to get any console output from the Melissa Updater.
 
 When you have modified the script to match your data location, let's run the script.
@@ -154,23 +158,23 @@ There are two modes:
 
 	The script will prompt the user for a zip code, then use the provided zip to test GeoCoder Object. For example:
 	```
-	$ ./MelissaDataGeoCoderObjectLinuxNETSample.sh
+	$ ./MelissaGeoCoderObjectLinuxDotnet.sh
 	```
 	For quiet mode:
 	```
-	$ ./MelissaDataGeoCoderObjectLinuxNETSample.sh --quiet
+	$ ./MelissaGeoCoderObjectLinuxDotnet.sh --quiet
 	```
 - Command Line
 
     You can pass a zip code in the ```--zip``` parameter and a license string in ```--license``` parameter to test GeoCoder Object. For example:
     ```
-    $ ./MelissaDataGeoCoderObjectLinuxNETSample.sh --zip "92688"
-    $ ./MelissaDataGeoCoderObjectLinuxNETSample.sh --zip "92688" --license "<your_license_string>"
+    $ ./MelissaGeoCoderObjectLinuxDotnet.sh --zip "92688"
+    $ ./MelissaGeoCoderObjectLinuxDotnet.sh --zip "92688" --license "<your_license_string>"
     ```
     For quiet mode:
     ```
-    $ ./MelissaDataGeoCoderObjectLinuxNETSample.sh --zip "92688" --quiet
-    $ ./MelissaDataGeoCoderObjectLinuxNETSample.sh --zip "92688" --license "<your_license_string>" --quiet
+    $ ./MelissaGeoCoderObjectLinuxDotnet.sh --zip "92688" --quiet
+    $ ./MelissaGeoCoderObjectLinuxDotnet.sh --zip "92688" --license "<your_license_string>" --quiet
     ```
 This is the expected output from a successful setup for interactive mode:
 
@@ -178,7 +182,7 @@ This is the expected output from a successful setup for interactive mode:
 
 ## Troubleshooting
 
-Troubleshooting for errors found while running your sample program.
+Troubleshooting for errors found while running your program.
 
 ### C# Errors:
 
@@ -191,8 +195,6 @@ Troubleshooting for errors found while running your sample program.
 
 ## Contact Us
 
-For free technical support, please call us at 800-MELISSA ext. 4
-(800-635-4772 ext. 4) or email us at tech@MelissaData.com.
+For free technical support, please call us at 800-MELISSA ext. 4 (800-635-4772 ext. 4) or email us at tech@melissa.com.
 
-To purchase this product, contact Melissa Data sales department at
-800-MELISSA ext. 3 (800-635-4772 ext. 3).
+To purchase this product, contact the Melissa sales department at 800-MELISSA ext. 3 (800-635-4772 ext. 3).

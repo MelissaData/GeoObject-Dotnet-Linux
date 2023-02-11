@@ -259,11 +259,11 @@ paket-files/
 # Python Tools for Visual Studio (PTVS)
 __pycache__/
 *.pyc
-/MelissaDataGeoCoderObjectWindowsNETExample/mdGeoNET.dll
-/MelissaDataGeoCoderObjectWindowsNETExample/mdGeo.dll
-/MelissaDataGeoCoderObjectWindowsNETExample/mdGeo.dll.hash
-/MelissaDataGeoCoderObjectWindowsNETExample/mdGeoNET.dll.hash
-/MelissaDataGeoCoderObjectWindowsNETExample/Data
+/MelissaGeoCoderObjectLinuxDotnet/mdGeoNET.dll
+/MelissaGeoCoderObjectLinuxDotnet/mdGeo.dll
+/MelissaGeoCoderObjectLinuxDotnet/mdGeo.dll.hash
+/MelissaGeoCoderObjectLinuxDotnet/mdGeoNET.dll.hash
+/MelissaGeoCoderObjectLinuxDotnet/Data
 /MelissaUpdater
-/MelissaDataGeoCoderObjectWindowsNETExample/.editorconfig
-/MelissaDataGeoCoderObjectWindowsNETExample/Build
+/MelissaGeoCoderObjectLinuxDotnet/.editorconfig
+/MelissaGeoCoderObjectLinuxDotnet/Build

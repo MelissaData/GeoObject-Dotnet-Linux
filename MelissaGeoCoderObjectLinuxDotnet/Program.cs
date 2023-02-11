@@ -4,7 +4,7 @@ using System.Reflection;
 using MelissaData;
 using System.Net;
 
-namespace MelissaDataGeoCoderObjectLinuxNETSample
+namespace MelissaGeoCoderObjectLinuxDotnet
 {
   class Program
   {
@@ -49,8 +49,8 @@ namespace MelissaDataGeoCoderObjectLinuxNETSample
 
     static void RunAsConsole(string license, string testZip, string dataPath)
     {
-      Console.WriteLine("\n\n===== WELCOME TO MELISSA DATA GEOCODER OBJECT LINUX NET SAMPLE =====\n");
-
+      Console.WriteLine("\n\n========== WELCOME TO MELISSA GEOCODER OBJECT LINUX DOTNET =========\n");
+     
       GeoObject geoObject = new GeoObject(license, dataPath);
 
       bool shouldContinueRunning = true;
@@ -131,16 +131,16 @@ namespace MelissaDataGeoCoderObjectLinuxNETSample
           }
         }
       }
-      Console.WriteLine("\n========= THANK YOU FOR USING MELISSA DATA NET OBJECT ========\n");
+      Console.WriteLine("\n========= THANK YOU FOR USING MELISSA DOTNET OBJECT ========\n");
     }
   }
 
   class GeoObject
   {
-    // Path to geocoder object data files (.dat, etc)
+    // Path to GeoCoder Object data files (.dat, etc)
     string dataFilePath;
 
-    // Create instance of Melissa Data GeoCoder Object
+    // Create instance of Melissa GeoCoder Object
     public mdGeo mdGeoObj = new mdGeo();
 
     public GeoObject(string license, string dataPath)
@@ -168,7 +168,7 @@ namespace MelissaDataGeoCoderObjectLinuxNETSample
       Console.WriteLine($"              Expiration Date: {mdGeoObj.GetLicenseExpirationDate()}");
 
       /**
-       * This number should match with file properties of the Melissa Data Object binary file.
+       * This number should match with file properties of the Melissa Object binary file.
        * If TEST appears with the build number, there may be a license key issue.
        */
       Console.WriteLine($"               Object Version: {mdGeoObj.GetBuildNumber()}\n");
@@ -182,8 +182,8 @@ namespace MelissaDataGeoCoderObjectLinuxNETSample
       mdGeoObj.FindGeo();
       data.ResultCodes = mdGeoObj.GetResults();
 
-      // ResultsCodes explain any issues geoCoder object has with the object.
-      // List of result codes for GeoCoder object
+      // ResultsCodes explain any issues GeoCoder Object has with the object.
+      // List of result codes for GeoCoder Object
       // https://wiki.melissadata.com/?title=Result_Code_Details#GeoCoder_Object
     }
   }

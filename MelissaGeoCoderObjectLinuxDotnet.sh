@@ -1,7 +1,7 @@
 #!/bin/bash
 
-# Name:    MelissaDataGeoCoderObjectLinuxNET
-# Purpose: Use the MelissaUpdater to make the MelissaDataGeoCoderObjectLinuxNET sample usable
+# Name:    MelissaGeoCoderObjectLinuxDotnet
+# Purpose: Use the MelissaUpdater to make the MelissaGeoCoderObjectLinuxDotnet code usable
 
 ######################### Constants ##########################
 
@@ -49,7 +49,7 @@ ProductName="GEOCODER_DATA"
 # Uses the location of the .sh file 
 # Modify this if you want to use 
 CurrentPath=$(pwd)
-ProjectPath="$CurrentPath/MelissaDataGeoCoderObjectLinuxNETSample"
+ProjectPath="$CurrentPath/MelissaGeoCoderObjectLinuxDotnet"
 BuildPath="$ProjectPath/Build"
 DataPath="$ProjectPath/Data"
 
@@ -126,7 +126,7 @@ CheckSOs()
 
 ########################## Main ############################
 
-printf "\n=============== Sample of Melissa Data GeoCoder Object ===============\n                    [ .NET | Linux | 64BIT ]\n"
+printf "\n====================== Melissa GeoCoder Object =====================\n                    [ .NET | Linux | 64BIT ]\n"
 
 # Get license (either from parameters or user input)
 if [ -z "$license" ];
@@ -179,20 +179,20 @@ fi
 
 printf "\nAll file(s) have been downloaded/updated!\n"
 
-# Start sample
+# Start program
 # Build project
 printf "\n=========================== BUILD PROJECT ==========================\n"
 
 # Target frameworks net7.0, net5.0, netcoreapp3.1
 # Please comment out the version that you don't want to use and uncomment the one that you do want to use
-dotnet publish -f="net7.0" -c Release -o $BuildPath MelissaDataGeoCoderObjectLinuxNETSample/MelissaDataGeoCoderObjectLinuxNETSample.csproj
-#dotnet publish -f="net5.0" -c Release -o $BuildPath MelissaDataGeoCoderObjectLinuxNETSample/MelissaDataGeoCoderObjectLinuxNETSample.csproj
-#dotnet publish -f="netcoreapp3.1" -c Release -o $BuildPath MelissaDataGeoCoderObjectLinuxNETSample/MelissaDataGeoCoderObjectLinuxNETSample.csproj
+dotnet publish -f="net7.0" -c Release -o $BuildPath MelissaGeoCoderObjectLinuxDotnet/MelissaGeoCoderObjectLinuxDotnet.csproj
+#dotnet publish -f="net5.0" -c Release -o $BuildPath MelissaGeoCoderObjectLinuxDotnet/MelissaGeoCoderObjectLinuxDotnet.csproj
+#dotnet publish -f="netcoreapp3.1" -c Release -o $BuildPath MelissaGeoCoderObjectLinuxDotnet/MelissaGeoCoderObjectLinuxDotnet.csproj
 
 # Run project
 if [ -z "$zip" ];
 then 
-	dotnet $BuildPath/MelissaDataGeoCoderObjectLinuxNETSample.dll --license $license --dataPath $DataPath
+	dotnet $BuildPath/MelissaGeoCoderObjectLinuxDotnet.dll --license $license --dataPath $DataPath
 else
-	dotnet $BuildPath/MelissaDataGeoCoderObjectLinuxNETSample.dll --license $license --dataPath $DataPath --zip "$zip"
+	dotnet $BuildPath/MelissaGeoCoderObjectLinuxDotnet.dll --license $license --dataPath $DataPath --zip "$zip"
 fi
