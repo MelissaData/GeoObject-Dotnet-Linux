@@ -88,10 +88,10 @@ namespace MelissaGeoCoderObjectLinuxDotnet
         // Print Output
         Console.WriteLine("\n============================== OUTPUT ==============================\n");
         Console.WriteLine("\n\tGeoCoder Object Information:");
-        Console.WriteLine($"\t              PlaceName: {geoObject.mdGeoObj.GetPlaceName()}");
+        Console.WriteLine($"\t             Place Name: {geoObject.mdGeoObj.GetPlaceName()}");
         Console.WriteLine($"\t                 County: {geoObject.mdGeoObj.GetCountyName()}");
-        Console.WriteLine($"\t  CountySubdivisionName: {geoObject.mdGeoObj.GetCountySubdivisionName()}");
-        Console.WriteLine($"\t               TimeZone: {geoObject.mdGeoObj.GetTimeZone()}");
+        Console.WriteLine($"\tCounty Subdivision Name: {geoObject.mdGeoObj.GetCountySubdivisionName()}");
+        Console.WriteLine($"\t              Time Zone: {geoObject.mdGeoObj.GetTimeZone()}");
         Console.WriteLine($"\t               Latitude: {geoObject.mdGeoObj.GetLatitude()}");
         Console.WriteLine($"\t              Longitude: {geoObject.mdGeoObj.GetLongitude()}");
         Console.WriteLine($"\t           Result Codes: {dataContainer.ResultCodes}");
