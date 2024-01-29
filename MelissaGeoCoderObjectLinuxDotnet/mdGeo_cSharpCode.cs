@@ -186,29 +186,29 @@ namespace MelissaData {
 		}
 
 		public void SetPathToGeoCodeDataFiles(string p1) {
-			Utf8String u_p1 = new Utf8String(p1);
-			mdGeoUnmanaged.mdGeoSetPathToGeoCodeDataFiles(i, u_p1.GetUtf8Ptr());
+			EncodedString u_p1 = new EncodedString(p1);
+			mdGeoUnmanaged.mdGeoSetPathToGeoCodeDataFiles(i, u_p1.GetPtr());
 		}
 
 		public void SetPathToGeoPointDataFiles(string p1) {
-			Utf8String u_p1 = new Utf8String(p1);
-			mdGeoUnmanaged.mdGeoSetPathToGeoPointDataFiles(i, u_p1.GetUtf8Ptr());
+			EncodedString u_p1 = new EncodedString(p1);
+			mdGeoUnmanaged.mdGeoSetPathToGeoPointDataFiles(i, u_p1.GetPtr());
 		}
 
 		public void SetPathToGeoCanadaDataFiles(string p1) {
-			Utf8String u_p1 = new Utf8String(p1);
-			mdGeoUnmanaged.mdGeoSetPathToGeoCanadaDataFiles(i, u_p1.GetUtf8Ptr());
+			EncodedString u_p1 = new EncodedString(p1);
+			mdGeoUnmanaged.mdGeoSetPathToGeoCanadaDataFiles(i, u_p1.GetPtr());
 		}
 
 		public bool SetLicenseString(string License) {
-			Utf8String u_License = new Utf8String(License);
-			return (mdGeoUnmanaged.mdGeoSetLicenseString(i, u_License.GetUtf8Ptr()) != 0);
+			EncodedString u_License = new EncodedString(License);
+			return (mdGeoUnmanaged.mdGeoSetLicenseString(i, u_License.GetPtr()) != 0);
 		}
 
 		public ProgramStatus Initialize(string DataPath, string IndexPath) {
-			Utf8String u_DataPath = new Utf8String(DataPath);
-			Utf8String u_IndexPath = new Utf8String(IndexPath);
-			return (ProgramStatus)mdGeoUnmanaged.mdGeoInitialize(i, u_DataPath.GetUtf8Ptr(), u_IndexPath.GetUtf8Ptr());
+			EncodedString u_DataPath = new EncodedString(DataPath);
+			EncodedString u_IndexPath = new EncodedString(IndexPath);
+			return (ProgramStatus)mdGeoUnmanaged.mdGeoInitialize(i, u_DataPath.GetPtr(), u_IndexPath.GetPtr());
 		}
 
 		public ProgramStatus InitializeDataFiles() {
@@ -216,57 +216,57 @@ namespace MelissaData {
 		}
 
 		public string GetInitializeErrorString() {
-			return Utf8String.GetUnicodeString(mdGeoUnmanaged.mdGeoGetInitializeErrorString(i));
+			return EncodedString.GetEncodedString(mdGeoUnmanaged.mdGeoGetInitializeErrorString(i));
 		}
 
 		public string GetBuildNumber() {
-			return Utf8String.GetUnicodeString(mdGeoUnmanaged.mdGeoGetBuildNumber(i));
+			return EncodedString.GetEncodedString(mdGeoUnmanaged.mdGeoGetBuildNumber(i));
 		}
 
 		public string GetDatabaseDate() {
-			return Utf8String.GetUnicodeString(mdGeoUnmanaged.mdGeoGetDatabaseDate(i));
+			return EncodedString.GetEncodedString(mdGeoUnmanaged.mdGeoGetDatabaseDate(i));
 		}
 
 		public string GetExpirationDate() {
-			return Utf8String.GetUnicodeString(mdGeoUnmanaged.mdGeoGetExpirationDate(i));
+			return EncodedString.GetEncodedString(mdGeoUnmanaged.mdGeoGetExpirationDate(i));
 		}
 
 		public string GetLicenseExpirationDate() {
-			return Utf8String.GetUnicodeString(mdGeoUnmanaged.mdGeoGetLicenseExpirationDate(i));
+			return EncodedString.GetEncodedString(mdGeoUnmanaged.mdGeoGetLicenseExpirationDate(i));
 		}
 
 		public void SetLatitude(string latitude) {
-			Utf8String u_latitude = new Utf8String(latitude);
-			mdGeoUnmanaged.mdGeoSetLatitude(i, u_latitude.GetUtf8Ptr());
+			EncodedString u_latitude = new EncodedString(latitude);
+			mdGeoUnmanaged.mdGeoSetLatitude(i, u_latitude.GetPtr());
 		}
 
 		public void SetLongitude(string longitude) {
-			Utf8String u_longitude = new Utf8String(longitude);
-			mdGeoUnmanaged.mdGeoSetLongitude(i, u_longitude.GetUtf8Ptr());
+			EncodedString u_longitude = new EncodedString(longitude);
+			mdGeoUnmanaged.mdGeoSetLongitude(i, u_longitude.GetPtr());
 		}
 
 		public bool WriteToLogFile(string logFile) {
-			Utf8String u_logFile = new Utf8String(logFile);
-			return (mdGeoUnmanaged.mdGeoWriteToLogFile(i, u_logFile.GetUtf8Ptr()) != 0);
+			EncodedString u_logFile = new EncodedString(logFile);
+			return (mdGeoUnmanaged.mdGeoWriteToLogFile(i, u_logFile.GetPtr()) != 0);
 		}
 
 		public int GeoCode(string Zip, string Plus4) {
-			Utf8String u_Zip = new Utf8String(Zip);
-			Utf8String u_Plus4 = new Utf8String(Plus4);
-			return mdGeoUnmanaged.mdGeoGeoCode(i, u_Zip.GetUtf8Ptr(), u_Plus4.GetUtf8Ptr());
+			EncodedString u_Zip = new EncodedString(Zip);
+			EncodedString u_Plus4 = new EncodedString(Plus4);
+			return mdGeoUnmanaged.mdGeoGeoCode(i, u_Zip.GetPtr(), u_Plus4.GetPtr());
 		}
 
 		public int GeoCode(string Zip) {
-			Utf8String u_Zip = new Utf8String(Zip);
-			Utf8String u_Plus4 = new Utf8String("");
-			return mdGeoUnmanaged.mdGeoGeoCode(i, u_Zip.GetUtf8Ptr(), u_Plus4.GetUtf8Ptr());
+			EncodedString u_Zip = new EncodedString(Zip);
+			EncodedString u_Plus4 = new EncodedString("");
+			return mdGeoUnmanaged.mdGeoGeoCode(i, u_Zip.GetPtr(), u_Plus4.GetPtr());
 		}
 
 		public int GeoPoint(string Zip, string Plus4, string DeliveryPointCode) {
-			Utf8String u_Zip = new Utf8String(Zip);
-			Utf8String u_Plus4 = new Utf8String(Plus4);
-			Utf8String u_DeliveryPointCode = new Utf8String(DeliveryPointCode);
-			return mdGeoUnmanaged.mdGeoGeoPoint(i, u_Zip.GetUtf8Ptr(), u_Plus4.GetUtf8Ptr(), u_DeliveryPointCode.GetUtf8Ptr());
+			EncodedString u_Zip = new EncodedString(Zip);
+			EncodedString u_Plus4 = new EncodedString(Plus4);
+			EncodedString u_DeliveryPointCode = new EncodedString(DeliveryPointCode);
+			return mdGeoUnmanaged.mdGeoGeoPoint(i, u_Zip.GetPtr(), u_Plus4.GetPtr(), u_DeliveryPointCode.GetPtr());
 		}
 
 		public double ComputeDistance(double Latitude1, double Longitude1, double Latitude2, double Longitude2) {
@@ -278,147 +278,147 @@ namespace MelissaData {
 		}
 
 		public string GetErrorCode() {
-			return Utf8String.GetUnicodeString(mdGeoUnmanaged.mdGeoGetErrorCode(i));
+			return EncodedString.GetEncodedString(mdGeoUnmanaged.mdGeoGetErrorCode(i));
 		}
 
 		public string GetStatusCode() {
-			return Utf8String.GetUnicodeString(mdGeoUnmanaged.mdGeoGetStatusCode(i));
+			return EncodedString.GetEncodedString(mdGeoUnmanaged.mdGeoGetStatusCode(i));
 		}
 
 		public string GetResults() {
-			return Utf8String.GetUnicodeString(mdGeoUnmanaged.mdGeoGetResults(i));
+			return EncodedString.GetEncodedString(mdGeoUnmanaged.mdGeoGetResults(i));
 		}
 
 		public string GetResultCodeDescription(string resultCode, ResultCdDescOpt opt) {
-			Utf8String u_resultCode = new Utf8String(resultCode);
-			return Utf8String.GetUnicodeString(mdGeoUnmanaged.mdGeoGetResultCodeDescription(i, u_resultCode.GetUtf8Ptr(), (int)opt));
+			EncodedString u_resultCode = new EncodedString(resultCode);
+			return EncodedString.GetEncodedString(mdGeoUnmanaged.mdGeoGetResultCodeDescription(i, u_resultCode.GetPtr(), (int)opt));
 		}
 
 		public string GetResultCodeDescription(string resultCode) {
-			Utf8String u_resultCode = new Utf8String(resultCode);
-			return Utf8String.GetUnicodeString(mdGeoUnmanaged.mdGeoGetResultCodeDescription(i, u_resultCode.GetUtf8Ptr(), (int)ResultCdDescOpt.ResultCodeDescriptionLong));
+			EncodedString u_resultCode = new EncodedString(resultCode);
+			return EncodedString.GetEncodedString(mdGeoUnmanaged.mdGeoGetResultCodeDescription(i, u_resultCode.GetPtr(), (int)ResultCdDescOpt.ResultCodeDescriptionLong));
 		}
 
 		public string GetLatitude() {
-			return Utf8String.GetUnicodeString(mdGeoUnmanaged.mdGeoGetLatitude(i));
+			return EncodedString.GetEncodedString(mdGeoUnmanaged.mdGeoGetLatitude(i));
 		}
 
 		public string GetLongitude() {
-			return Utf8String.GetUnicodeString(mdGeoUnmanaged.mdGeoGetLongitude(i));
+			return EncodedString.GetEncodedString(mdGeoUnmanaged.mdGeoGetLongitude(i));
 		}
 
 		public string GetCensusTract() {
-			return Utf8String.GetUnicodeString(mdGeoUnmanaged.mdGeoGetCensusTract(i));
+			return EncodedString.GetEncodedString(mdGeoUnmanaged.mdGeoGetCensusTract(i));
 		}
 
 		public string GetCensusBlock() {
-			return Utf8String.GetUnicodeString(mdGeoUnmanaged.mdGeoGetCensusBlock(i));
+			return EncodedString.GetEncodedString(mdGeoUnmanaged.mdGeoGetCensusBlock(i));
 		}
 
 		public string GetCountyFips() {
-			return Utf8String.GetUnicodeString(mdGeoUnmanaged.mdGeoGetCountyFips(i));
+			return EncodedString.GetEncodedString(mdGeoUnmanaged.mdGeoGetCountyFips(i));
 		}
 
 		public string GetCountyName() {
-			return Utf8String.GetUnicodeString(mdGeoUnmanaged.mdGeoGetCountyName(i));
+			return EncodedString.GetEncodedString(mdGeoUnmanaged.mdGeoGetCountyName(i));
 		}
 
 		public string GetPlaceCode() {
-			return Utf8String.GetUnicodeString(mdGeoUnmanaged.mdGeoGetPlaceCode(i));
+			return EncodedString.GetEncodedString(mdGeoUnmanaged.mdGeoGetPlaceCode(i));
 		}
 
 		public string GetPlaceName() {
-			return Utf8String.GetUnicodeString(mdGeoUnmanaged.mdGeoGetPlaceName(i));
+			return EncodedString.GetEncodedString(mdGeoUnmanaged.mdGeoGetPlaceName(i));
 		}
 
 		public string GetTimeZoneCode() {
-			return Utf8String.GetUnicodeString(mdGeoUnmanaged.mdGeoGetTimeZoneCode(i));
+			return EncodedString.GetEncodedString(mdGeoUnmanaged.mdGeoGetTimeZoneCode(i));
 		}
 
 		public string GetTimeZone() {
-			return Utf8String.GetUnicodeString(mdGeoUnmanaged.mdGeoGetTimeZone(i));
+			return EncodedString.GetEncodedString(mdGeoUnmanaged.mdGeoGetTimeZone(i));
 		}
 
 		public string GetCBSACode() {
-			return Utf8String.GetUnicodeString(mdGeoUnmanaged.mdGeoGetCBSACode(i));
+			return EncodedString.GetEncodedString(mdGeoUnmanaged.mdGeoGetCBSACode(i));
 		}
 
 		public string GetCBSATitle() {
-			return Utf8String.GetUnicodeString(mdGeoUnmanaged.mdGeoGetCBSATitle(i));
+			return EncodedString.GetEncodedString(mdGeoUnmanaged.mdGeoGetCBSATitle(i));
 		}
 
 		public string GetCBSALevel() {
-			return Utf8String.GetUnicodeString(mdGeoUnmanaged.mdGeoGetCBSALevel(i));
+			return EncodedString.GetEncodedString(mdGeoUnmanaged.mdGeoGetCBSALevel(i));
 		}
 
 		public string GetCBSADivisionCode() {
-			return Utf8String.GetUnicodeString(mdGeoUnmanaged.mdGeoGetCBSADivisionCode(i));
+			return EncodedString.GetEncodedString(mdGeoUnmanaged.mdGeoGetCBSADivisionCode(i));
 		}
 
 		public string GetCBSADivisionTitle() {
-			return Utf8String.GetUnicodeString(mdGeoUnmanaged.mdGeoGetCBSADivisionTitle(i));
+			return EncodedString.GetEncodedString(mdGeoUnmanaged.mdGeoGetCBSADivisionTitle(i));
 		}
 
 		public string GetCBSADivisionLevel() {
-			return Utf8String.GetUnicodeString(mdGeoUnmanaged.mdGeoGetCBSADivisionLevel(i));
+			return EncodedString.GetEncodedString(mdGeoUnmanaged.mdGeoGetCBSADivisionLevel(i));
 		}
 
 		public string GetLastUsageLogMessage() {
-			return Utf8String.GetUnicodeString(mdGeoUnmanaged.mdGeoGetLastUsageLogMessage(i));
+			return EncodedString.GetEncodedString(mdGeoUnmanaged.mdGeoGetLastUsageLogMessage(i));
 		}
 
 		public string GetCensusKey() {
-			return Utf8String.GetUnicodeString(mdGeoUnmanaged.mdGeoGetCensusKey(i));
+			return EncodedString.GetEncodedString(mdGeoUnmanaged.mdGeoGetCensusKey(i));
 		}
 
 		public string GetCountySubdivisionCode() {
-			return Utf8String.GetUnicodeString(mdGeoUnmanaged.mdGeoGetCountySubdivisionCode(i));
+			return EncodedString.GetEncodedString(mdGeoUnmanaged.mdGeoGetCountySubdivisionCode(i));
 		}
 
 		public string GetCountySubdivisionName() {
-			return Utf8String.GetUnicodeString(mdGeoUnmanaged.mdGeoGetCountySubdivisionName(i));
+			return EncodedString.GetEncodedString(mdGeoUnmanaged.mdGeoGetCountySubdivisionName(i));
 		}
 
 		public string GetElementarySchoolDistrictCode() {
-			return Utf8String.GetUnicodeString(mdGeoUnmanaged.mdGeoGetElementarySchoolDistrictCode(i));
+			return EncodedString.GetEncodedString(mdGeoUnmanaged.mdGeoGetElementarySchoolDistrictCode(i));
 		}
 
 		public string GetElementarySchoolDistrictName() {
-			return Utf8String.GetUnicodeString(mdGeoUnmanaged.mdGeoGetElementarySchoolDistrictName(i));
+			return EncodedString.GetEncodedString(mdGeoUnmanaged.mdGeoGetElementarySchoolDistrictName(i));
 		}
 
 		public string GetSecondarySchoolDistrictCode() {
-			return Utf8String.GetUnicodeString(mdGeoUnmanaged.mdGeoGetSecondarySchoolDistrictCode(i));
+			return EncodedString.GetEncodedString(mdGeoUnmanaged.mdGeoGetSecondarySchoolDistrictCode(i));
 		}
 
 		public string GetSecondarySchoolDistrictName() {
-			return Utf8String.GetUnicodeString(mdGeoUnmanaged.mdGeoGetSecondarySchoolDistrictName(i));
+			return EncodedString.GetEncodedString(mdGeoUnmanaged.mdGeoGetSecondarySchoolDistrictName(i));
 		}
 
 		public string GetStateDistrictLower() {
-			return Utf8String.GetUnicodeString(mdGeoUnmanaged.mdGeoGetStateDistrictLower(i));
+			return EncodedString.GetEncodedString(mdGeoUnmanaged.mdGeoGetStateDistrictLower(i));
 		}
 
 		public string GetStateDistrictUpper() {
-			return Utf8String.GetUnicodeString(mdGeoUnmanaged.mdGeoGetStateDistrictUpper(i));
+			return EncodedString.GetEncodedString(mdGeoUnmanaged.mdGeoGetStateDistrictUpper(i));
 		}
 
 		public string GetUnifiedSchoolDistrictCode() {
-			return Utf8String.GetUnicodeString(mdGeoUnmanaged.mdGeoGetUnifiedSchoolDistrictCode(i));
+			return EncodedString.GetEncodedString(mdGeoUnmanaged.mdGeoGetUnifiedSchoolDistrictCode(i));
 		}
 
 		public string GetUnifiedSchoolDistrictName() {
-			return Utf8String.GetUnicodeString(mdGeoUnmanaged.mdGeoGetUnifiedSchoolDistrictName(i));
+			return EncodedString.GetEncodedString(mdGeoUnmanaged.mdGeoGetUnifiedSchoolDistrictName(i));
 		}
 
 		public string GetBlockSuffix() {
-			return Utf8String.GetUnicodeString(mdGeoUnmanaged.mdGeoGetBlockSuffix(i));
+			return EncodedString.GetEncodedString(mdGeoUnmanaged.mdGeoGetBlockSuffix(i));
 		}
 
 		public bool SetInputParameter(string key, string val) {
-			Utf8String u_key = new Utf8String(key);
-			Utf8String u_val = new Utf8String(val);
-			return (mdGeoUnmanaged.mdGeoSetInputParameter(i, u_key.GetUtf8Ptr(), u_val.GetUtf8Ptr()) != 0);
+			EncodedString u_key = new EncodedString(key);
+			EncodedString u_val = new EncodedString(val);
+			return (mdGeoUnmanaged.mdGeoSetInputParameter(i, u_key.GetPtr(), u_val.GetPtr()) != 0);
 		}
 
 		public void FindGeo() {
@@ -426,39 +426,40 @@ namespace MelissaData {
 		}
 
 		public string GetOutputParameter(string key) {
-			Utf8String u_key = new Utf8String(key);
-			return Utf8String.GetUnicodeString(mdGeoUnmanaged.mdGeoGetOutputParameter(i, u_key.GetUtf8Ptr()));
+			EncodedString u_key = new EncodedString(key);
+			return EncodedString.GetEncodedString(mdGeoUnmanaged.mdGeoGetOutputParameter(i, u_key.GetPtr()));
 		}
 
-		private class Utf8String : IDisposable {
-			private IntPtr utf8String = IntPtr.Zero;
+		private class EncodedString : IDisposable {
+			private IntPtr encodedString = IntPtr.Zero;
+			private static Encoding encoding = Encoding.GetEncoding("ISO-8859-1");
 
-			public Utf8String(string str) {
+			public EncodedString(string str) {
 				if (str == null)
 					str = "";
-				byte[] buffer = Encoding.UTF8.GetBytes(str);
+				byte[] buffer = encoding.GetBytes(str);
 				Array.Resize(ref buffer, buffer.Length + 1);
 				buffer[buffer.Length - 1] = 0;
-				utf8String = Marshal.AllocHGlobal(buffer.Length);
-				Marshal.Copy(buffer, 0, utf8String, buffer.Length);
+				encodedString = Marshal.AllocHGlobal(buffer.Length);
+				Marshal.Copy(buffer, 0, encodedString, buffer.Length);
 			}
 
-			~Utf8String() {
+			~EncodedString() {
 				Dispose();
 			}
 
 			public virtual void Dispose() {
 				lock (this) {
-					Marshal.FreeHGlobal(utf8String);
+					Marshal.FreeHGlobal(encodedString);
 					GC.SuppressFinalize(this);
 				}
 			}
 
-			public IntPtr GetUtf8Ptr() {
-				return utf8String;
+			public IntPtr GetPtr() {
+				return encodedString;
 			}
 
-			public static string GetUnicodeString(IntPtr ptr) {
+			public static string GetEncodedString(IntPtr ptr) {
 				if (ptr == IntPtr.Zero)
 					return "";
 				int len = 0;
@@ -468,7 +469,7 @@ namespace MelissaData {
 					return "";
 				byte[] buffer = new byte[len];
 				Marshal.Copy(ptr, buffer, 0, len);
-				return Encoding.UTF8.GetString(buffer);
+				return encoding.GetString(buffer);
 			}
 		}
 	}
