@@ -53,7 +53,7 @@ done
 
 ######################### Config ###########################
 
-RELEASE_VERSION='2024.Q2'
+RELEASE_VERSION='2024.Q3'
 ProductName="GEOCODER_DATA"
 
 # Uses the location of the .sh file 
