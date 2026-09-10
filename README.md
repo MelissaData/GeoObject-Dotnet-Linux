@@ -5,7 +5,7 @@ This code showcases the Melissa GeoCoder Object using C#.
 
 Please feel free to copy or embed this code to your own project. Happy coding!
 
-For the latest Melissa GeoCoder Object release notes, please visit: https://releasenotes.melissa.com/on-premise-api/geocoder-object/
+To view the latest Melissa GeoCoder Object release notes or to subscribe to product notifications, please visit: https://releasenotes.melissa.com/on-premise-api/geocoder-object/
 
 For further details, please visit: https://docs.melissa.com/on-premise-api/geocoder-object/geocoder-object-quickstart.html
 
@@ -31,8 +31,8 @@ For Canada:
 - Longitude
 
 ## Tested Environments
-- Linux 64-bit .NET 8.0, Ubuntu 20.04.05 LTS
-- Melissa data files for 2026-Q2
+- Linux 64-bit .NET 10.0, Ubuntu 20.04.05 LTS
+- Melissa data files for 2026-Q3
 
 ## Required File(s) and Programs
 
@@ -51,9 +51,7 @@ Before starting, check to see if you already have .NET SDK already installed by 
 
 `dotnet --list-sdks`
 
-If .NET SDK is already installed, you should see it in the following list:
-
-![alt text](/screenshots/dotnet_output.png)
+If .NET SDK is already installed, you should see it listed.
 
 To download, run the following commands to add the Microsoft package signing key to your list of trusted keys and add the package repository.
 
@@ -63,7 +61,7 @@ sudo dpkg -i packages-microsoft-prod.deb
 rm packages-microsoft-prod.deb
 ```
 
-Next, you can now run this command to install your desired .NET SDK (replace <VERSION> with .NET version: 8.0, 9.0, etc.):
+Next, you can now run this command to install your desired .NET SDK (replace <VERSION> with .NET version: 10.0, etc.):
 
 ```
 sudo apt-get update && \
